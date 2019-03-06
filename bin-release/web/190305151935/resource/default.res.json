@@ -1,0 +1,105 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,玩具_png,养羊咩_png,食物-8_png,bg_jpg,Sheep_Ani_tex_json,Sheep_Ani_tex_png,Sheep_Ani_ske_json,食物-9_png,食物_png,食物-9 (1)_png,食物 (1)_png,生气_png,实物-锤子_png,爱心_png,爱心 (1)_png,火_png,火 (1)_png,火 (2)_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/玩具.png",
+			"type": "image",
+			"name": "玩具_png"
+		},
+		{
+			"url": "assets/养羊咩.png",
+			"type": "image",
+			"name": "养羊咩_png"
+		},
+		{
+			"url": "assets/食物-8.png",
+			"type": "image",
+			"name": "食物-8_png"
+		},
+		{
+			"name": "Sheep_Ani_tex_json",
+			"type": "json",
+			"url": "sheep/Sheep_Ani_tex.json"
+		},
+		{
+			"name": "Sheep_Ani_tex_png",
+			"type": "image",
+			"url": "sheep/Sheep_Ani_tex.png"
+		},
+		{
+			"name": "Sheep_Ani_ske_json",
+			"type": "json",
+			"url": "sheep/Sheep_Ani_ske.json"
+		},
+		{
+			"name": "食物-9_png",
+			"type": "image",
+			"url": "assets/食物-9.png"
+		},
+		{
+			"name": "食物_png",
+			"type": "image",
+			"url": "assets/食物.png"
+		},
+		{
+			"name": "食物-9 (1)_png",
+			"type": "image",
+			"url": "assets/食物-9 (1).png"
+		},
+		{
+			"name": "食物 (1)_png",
+			"type": "image",
+			"url": "assets/食物 (1).png"
+		},
+		{
+			"name": "生气_png",
+			"type": "image",
+			"url": "assets/生气.png"
+		},
+		{
+			"name": "实物-锤子_png",
+			"type": "image",
+			"url": "assets/实物-锤子.png"
+		},
+		{
+			"name": "爱心_png",
+			"type": "image",
+			"url": "assets/爱心.png"
+		},
+		{
+			"name": "爱心 (1)_png",
+			"type": "image",
+			"url": "assets/爱心 (1).png"
+		},
+		{
+			"name": "火_png",
+			"type": "image",
+			"url": "assets/火.png"
+		},
+		{
+			"name": "火 (1)_png",
+			"type": "image",
+			"url": "assets/火 (1).png"
+		},
+		{
+			"name": "火 (2)_png",
+			"type": "image",
+			"url": "assets/火 (2).png"
+		}
+	]
+}
