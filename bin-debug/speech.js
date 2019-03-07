@@ -89,6 +89,11 @@ var speech = (function (_super) {
             case 5:
                 label.text = "打扰了...";
                 label.x = this.g.width / 2 + 50;
+                break;
+            case 6:
+                label.text = Math.random() > 0.7 ? "今天天气怎么样?" : "有你的世界在哪里";
+                label.size = 20;
+                label.x = this.g.width / 2 + 40;
         }
         this.g.addChild(label);
     };

@@ -107,7 +107,7 @@ var Main = (function (_super) {
         button_food.y = this.stage.stageHeight - 105;
         this.addChildAt(button_food, 3);
         button_1.touchEnabled = true;
-        button_1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.foodButton, this);
+        button_1.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.foodButton, this);
         var button_2 = new egret.Shape();
         button_2.x = this.stage.stageWidth / 2;
         button_2.y = this.stage.stageHeight - 70;
@@ -141,35 +141,48 @@ var Main = (function (_super) {
     };
     Main.prototype.dailyTime = function () {
         this.armatureDisplay.addEventListener(dragonBones.EventObject.COMPLETE, this.dailyTime, this);
+        if (this.getChildIndex(this.speech) > 0)
+            this.removeChild(this.speech);
         if (Math.random() > 0.8) {
-            if (this.getChildIndex(this.speech) > 0)
-                this.removeChild(this.speech);
             this.speech = new speech(2);
             this.addChildAt(this.speech, 2);
             this.armatureDisplay.animation.play("goat_sleep_idle_anim", 10);
         }
-        else {
-            if (this.getChildIndex(this.speech) > 0)
-                this.removeChild(this.speech);
+        else if (Math.random() > 0.3) {
             this.speech = new speech(1);
             this.addChildAt(this.speech, 2);
             this.armatureDisplay.animation.play("goat_idle_anim", 10);
         }
+        else {
+            this.speech = new speech(6);
+            this.addChildAt(this.speech, 2);
+            this.armatureDisplay.animation.play("goat_walk_anim", 10);
+        }
     };
     Main.prototype.foodButton = function () {
-        if (this.getChildIndex(this.speech) > 0)
-            this.removeChild(this.speech);
-        this.speech = new speech(4);
-        this.addChildAt(this.speech, 2);
-        this.armatureDisplay.animation.play("goat_eat_anim", 1);
-        this.bonusPoints();
+        if (this.getChildIndex(this.food) > 0)
+            this.removeChild(this.food);
+        this.food = new delicious(this.armatureDisplay);
+        this.addChild(this.food);
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.eat, this);
+    };
+    Main.prototype.eat = function (e) {
+        if (e.stageX > 65 && e.stageX < 420 && e.stageY > 400 && e.stageY < 640) {
+            if (this.getChildIndex(this.speech) > 0)
+                this.removeChild(this.speech);
+            this.speech = new speech(4);
+            this.addChildAt(this.speech, 2);
+            this.armatureDisplay.animation.play("goat_eat_anim", 1);
+            this.bonusPoints();
+        }
+        this.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.eat, this);
     };
     Main.prototype.playButton = function () {
         if (this.getChildIndex(this.speech) > 0)
             this.removeChild(this.speech);
         this.speech = new speech(5);
         this.addChildAt(this.speech, 2);
-        this.armatureDisplay.animation.play("goat_trot_anim", 4);
+        this.armatureDisplay.animation.play("goat_trot_anim", 1);
         this.bonusPoints();
     };
     Main.prototype.loveButton = function () {
@@ -177,7 +190,7 @@ var Main = (function (_super) {
             this.removeChild(this.speech);
         this.speech = new speech(3);
         this.addChildAt(this.speech, 2);
-        this.armatureDisplay.animation.play("goat_walk_anim_复制1", 1);
+        this.armatureDisplay.animation.play("newAnimation", 1);
         this.bonusPoints();
     };
     Main.prototype.createDays = function () {

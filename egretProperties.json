@@ -23,6 +23,9 @@
     },
     {
       "name": "promise"
+    },
+    {
+      "name": "particle"
     }
   ]
 }

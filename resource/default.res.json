@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,bg_jpg,食物 (1)_png,爱心 (1)_png,火 (2)_png,Sheep_Ani_2_ske_json,Sheep_Ani_2_tex_json,Sheep_Ani_2_tex_png",
+			"keys": "description_json,bg_jpg,食物 (1)_png,爱心 (1)_png,火 (2)_png,小吃_png,美食_png,美食_草莓_png,美食_吐司_png,美食_蔓越莓_png,newParticle_png,newParticle_json",
 			"name": "preload"
 		}
 	],
@@ -32,19 +32,39 @@
 			"name": "火 (2)_png"
 		},
 		{
-			"url": "sheep/Sheep_Ani_2_tex.png",
+			"url": "assets/小吃.png",
 			"type": "image",
-			"name": "Sheep_Ani_2_tex_png"
+			"name": "小吃_png"
 		},
 		{
-			"url": "sheep/Sheep_Ani_2_tex.json",
-			"type": "json",
-			"name": "Sheep_Ani_2_tex_json"
+			"url": "assets/美食.png",
+			"type": "image",
+			"name": "美食_png"
 		},
 		{
-			"url": "sheep/Sheep_Ani_2_ske.json",
+			"url": "assets/美食_草莓.png",
+			"type": "image",
+			"name": "美食_草莓_png"
+		},
+		{
+			"url": "assets/美食_吐司.png",
+			"type": "image",
+			"name": "美食_吐司_png"
+		},
+		{
+			"url": "assets/美食_蔓越莓.png",
+			"type": "image",
+			"name": "美食_蔓越莓_png"
+		},
+		{
+			"name": "newParticle_png",
+			"type": "image",
+			"url": "火/newParticle.png"
+		},
+		{
+			"name": "newParticle_json",
 			"type": "json",
-			"name": "Sheep_Ani_2_ske_json"
+			"url": "火/newParticle.json"
 		}
 	]
 }

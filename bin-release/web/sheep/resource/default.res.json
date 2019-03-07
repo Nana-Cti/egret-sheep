@@ -1,0 +1,50 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,bg_jpg,食物 (1)_png,爱心 (1)_png,火 (2)_png,Sheep_Ani_2_ske_json,Sheep_Ani_2_tex_json,Sheep_Ani_2_tex_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/食物 (1).png",
+			"type": "image",
+			"name": "食物 (1)_png"
+		},
+		{
+			"url": "assets/爱心 (1).png",
+			"type": "image",
+			"name": "爱心 (1)_png"
+		},
+		{
+			"url": "assets/火 (2).png",
+			"type": "image",
+			"name": "火 (2)_png"
+		},
+		{
+			"url": "sheep/Sheep_Ani_2_tex.png",
+			"type": "image",
+			"name": "Sheep_Ani_2_tex_png"
+		},
+		{
+			"url": "sheep/Sheep_Ani_2_tex.json",
+			"type": "json",
+			"name": "Sheep_Ani_2_tex_json"
+		},
+		{
+			"url": "sheep/Sheep_Ani_2_ske.json",
+			"type": "json",
+			"name": "Sheep_Ani_2_ske_json"
+		}
+	]
+}
