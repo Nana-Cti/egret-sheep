@@ -7,6 +7,6 @@ class fire extends egret.DisplayObjectContainer {
     private onAddToStage(){
         let texture = RES.getRes("newParticle_png");
         let config = RES.getRes("newParticle_json");
-        // let system = new particle.GravityParticleSystem(texture, config);
+        let system = new particle.GravityParticleSystem(texture, config);
     }
 }

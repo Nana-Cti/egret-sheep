@@ -25,7 +25,8 @@
       "name": "promise"
     },
     {
-      "name": "particle"
+      "name": "particle",
+      "path": "./libs/particle"
     }
   ]
 }
