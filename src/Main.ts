@@ -194,7 +194,7 @@ class Main extends egret.DisplayObjectContainer {
         this.bonusPoints();
         // button_play.x = this.stage.stageWidth/2 - 35;
         // button_play.y = this.stage.stageHeight -104;
-        this.fire.startFire(this.stage.stageWidth/2 - 10, this.stage.stageHeight -97);
+        this.fire.startFire(this.stage.stageWidth/2 - 10, this.stage.stageHeight -90);
     }
 
     private loveButton() {
