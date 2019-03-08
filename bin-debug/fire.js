@@ -18,7 +18,13 @@ var fire = (function (_super) {
     fire.prototype.onAddToStage = function () {
         var texture = RES.getRes("newParticle_png");
         var config = RES.getRes("newParticle_json");
-        var system = new particle.GravityParticleSystem(texture, config);
+        this.system = new particle.GravityParticleSystem(texture, config);
+        this.addChild(this.system);
+    };
+    fire.prototype.startFire = function (x, y) {
+        this.system.emitterX = x;
+        this.system.emitterY = y;
+        this.system.start(500);
     };
     return fire;
 }(egret.DisplayObjectContainer));

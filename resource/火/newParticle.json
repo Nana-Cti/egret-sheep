@@ -30,7 +30,7 @@
 ,"emitAngleVariance":400
 ,"endBlueVariance":0
 ,"startGreenVariance":0
-,"endAlpha":1
+,"endAlpha":0.3
 ,"endRotationVariance":40
 ,"engGreenVariance":0
 ,"speedVariance":0

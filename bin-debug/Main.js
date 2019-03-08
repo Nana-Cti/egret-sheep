@@ -123,6 +123,9 @@ var Main = (function (_super) {
         this.addChildAt(button_play, 3);
         button_2.touchEnabled = true;
         button_2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.playButton, this);
+        // fire
+        this.fire = new fire();
+        this.addChildAt(this.fire, 2);
         var button_3 = new egret.Shape();
         button_3.x = this.stage.stageWidth / 2 + 140;
         button_3.y = this.stage.stageHeight - 70;
@@ -184,6 +187,9 @@ var Main = (function (_super) {
         this.addChildAt(this.speech, 2);
         this.armatureDisplay.animation.play("goat_trot_anim", 1);
         this.bonusPoints();
+        // button_play.x = this.stage.stageWidth/2 - 35;
+        // button_play.y = this.stage.stageHeight -104;
+        this.fire.startFire(this.stage.stageWidth / 2 - 10, this.stage.stageHeight - 97);
     };
     Main.prototype.loveButton = function () {
         if (this.getChildIndex(this.speech) > 0)

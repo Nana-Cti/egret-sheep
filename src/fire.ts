@@ -12,7 +12,9 @@ class fire extends egret.DisplayObjectContainer {
         this.addChild(this.system);
     }
 
-    public start([x,y]) {
+    public startFire(x:number,y:number) {
+        this.system.emitterX = x;
+        this.system.emitterY = y;
+        this.system.start(500);
     }
-
 }
