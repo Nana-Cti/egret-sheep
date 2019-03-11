@@ -35,7 +35,7 @@ class delicious extends egret.DisplayObjectContainer {
             this.sheep.x = this.sheep.x + 0.5;
         }
         let neck_bone = this.sheep.armature.getBone("neck_bone");
-        neck_bone.offset.rotation =(-(30/(this.position[1]+105)*e.stageY)+30)*Math.PI/180;
+        neck_bone.offset.rotation =(-(40/(this.position[1]+105)*e.stageY)+30)*Math.PI/180;
     }
 
     private goBack(e) {

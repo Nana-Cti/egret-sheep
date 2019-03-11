@@ -92,6 +92,8 @@ var Main = (function (_super) {
         this.armatureDisplay.scaleY = 0.5;
         this.armatureDisplay.x = this.stage.stageWidth / 2 + 30;
         this.armatureDisplay.y = this.stage.stageHeight - 120;
+        this.armatureDisplay.touchEnabled = true;
+        this.armatureDisplay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.loveButton, this);
     };
     Main.prototype.button = function () {
         var button_1 = new egret.Shape();
@@ -166,7 +168,7 @@ var Main = (function (_super) {
     Main.prototype.foodButton = function () {
         if (this.getChildIndex(this.food) > 0)
             this.removeChild(this.food);
-        this.armatureDisplay.animation.play("goat_walk_anim", 10);
+        this.armatureDisplay.animation.play("goat_walk_anim");
         this.food = new delicious(this.armatureDisplay);
         this.addChild(this.food);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.eat, this);
@@ -180,17 +182,33 @@ var Main = (function (_super) {
             this.armatureDisplay.animation.play("goat_eat_anim", 1);
             this.bonusPoints();
         }
+        else {
+            this.armatureDisplay.animation.play("goat_idle_anim", 1);
+        }
         this.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.eat, this);
     };
     Main.prototype.playButton = function () {
+        var _this = this;
         if (this.getChildIndex(this.speech) > 0)
             this.removeChild(this.speech);
         this.speech = new speech(5);
         this.addChildAt(this.speech, 2);
         this.armatureDisplay.animation.play("goat_trot_anim", 1);
-        this.bonusPoints();
+        // this.bonusPoints();
         // button_play.x = this.stage.stageWidth/2 - 35;
         // button_play.y = this.stage.stageHeight -104;
+        if (this.armatureDisplay.y == this.stage.stageHeight - 120) {
+            var run = egret.Tween.get(this.armatureDisplay);
+            run.to({ x: 20, y: (this.armatureDisplay.y - 200), scaleX: .2, scaleY: .2 }, 500)
+                .to({ scaleX: -0.2 }, 0)
+                .to({ x: this.stage.stageWidth / 2, y: (this.armatureDisplay.y - 400), scaleX: 0, scaleY: 0 }, 1000)
+                .call(function () {
+                _this.armatureDisplay.scaleX = 0.5;
+                _this.armatureDisplay.scaleY = 0.5;
+                _this.armatureDisplay.x = _this.stage.stageWidth / 2 + 30;
+                _this.armatureDisplay.y = _this.stage.stageHeight - 120;
+            });
+        }
         this.fire.startFire(this.stage.stageWidth / 2 - 10, this.stage.stageHeight - 90);
     };
     Main.prototype.loveButton = function () {
@@ -308,7 +326,6 @@ var Main = (function (_super) {
     };
     Main.prototype.bonusPoints = function () {
         if (!this.Completed) {
-            console.log(this.Rect_mask.y >= 50);
             var storage = window.localStorage;
             if (this.Rect_mask.y > 50) {
                 this.Rect_mask.y = this.Rect_mask.y - 5;

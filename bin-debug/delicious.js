@@ -41,7 +41,7 @@ var delicious = (function (_super) {
             this.sheep.x = this.sheep.x + 0.5;
         }
         var neck_bone = this.sheep.armature.getBone("neck_bone");
-        neck_bone.offset.rotation = (-(30 / (this.position[1] + 105) * e.stageY) + 30) * Math.PI / 180;
+        neck_bone.offset.rotation = (-(40 / (this.position[1] + 105) * e.stageY) + 30) * Math.PI / 180;
     };
     delicious.prototype.goBack = function (e) {
         var _this = this;
