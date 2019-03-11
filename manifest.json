@@ -10,7 +10,7 @@
 		"libs/particle/particle.js"
 	],
 	"game": [
-		"bin-debug/await.js",
+		"bin-debug/await_1.js",
 		"bin-debug/delicious.js",
 		"bin-debug/fire.js",
 		"bin-debug/Main.js",

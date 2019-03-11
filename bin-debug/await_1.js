@@ -8,25 +8,25 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
-var await = (function (_super) {
-    __extends(await, _super);
-    function await() {
+var await_1 = (function (_super) {
+    __extends(await_1, _super);
+    function await_1() {
         var _this = _super.call(this) || this;
         _this.once(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
         return _this;
     }
-    await.prototype.onAddToStage = function () {
+    await_1.prototype.onAddToStage = function () {
         this.createBackground();
         this.createImg();
     };
-    await.prototype.createBackground = function () {
+    await_1.prototype.createBackground = function () {
         this.background = new egret.Shape();
         this.background.graphics.beginFill(0xE9FFB8, 1);
         this.background.graphics.drawRect(0, 0, this.stage.stageWidth, this.stage.stageHeight);
         this.background.graphics.endFill();
         this.addChild(this.background);
     };
-    await.prototype.createImg = function () {
+    await_1.prototype.createImg = function () {
         var _this = this;
         var img = document.createElement("img");
         // img.src = 'base64'
@@ -43,7 +43,7 @@ var await = (function (_super) {
             _this.createMaskCircle((_this.myBmp.texture.textureHeight / 2 + _this.myBmp.y));
         };
     };
-    await.prototype.createMaskCircle = function (y) {
+    await_1.prototype.createMaskCircle = function (y) {
         this.maskCircle = new egret.Shape();
         this.maskCircle.x = this.stage.stageWidth / 2;
         this.maskCircle.y = y;
@@ -61,7 +61,7 @@ var await = (function (_super) {
         this.addChild(this.maskCircle_2);
         this.background.mask = this.maskCircle_2;
     };
-    await.prototype.removeImg = function () {
+    await_1.prototype.removeImg = function () {
         var _this = this;
         var circle = egret.Tween.get(this.maskCircle, { loop: false });
         circle.wait(400).to({ scaleX: 0, scaleY: 0 }, 700, egret.Ease.backOut)
@@ -76,7 +76,7 @@ var await = (function (_super) {
             _this.removeChild(_this.maskCircle_2);
         });
     };
-    return await;
+    return await_1;
 }(egret.DisplayObjectContainer));
-__reflect(await.prototype, "await");
-//# sourceMappingURL=await.js.map
+__reflect(await_1.prototype, "await_1");
+//# sourceMappingURL=await_1.js.map

@@ -38,6 +38,7 @@ class Main extends egret.DisplayObjectContainer {
 
     private img:await_1;
     private onAddToStage() {
+        this.stage.setContentSize(480, 800);
         this.img = new await_1();
         this.addChild(this.img);
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
@@ -87,8 +88,8 @@ class Main extends egret.DisplayObjectContainer {
 
         this.armatureDisplay = egretFactory.buildArmatureDisplay("Armature");
         this.addChildAt(this.armatureDisplay, 1);
-        this.armatureDisplay.scaleX = 0.6;
-        this.armatureDisplay.scaleY = 0.6;
+        this.armatureDisplay.scaleX = 0.5;
+        this.armatureDisplay.scaleY = 0.5;
         this.armatureDisplay.x = this.stage.stageWidth/2+30;
         this.armatureDisplay.y = this.stage.stageHeight - 120;
     }
@@ -170,6 +171,7 @@ class Main extends egret.DisplayObjectContainer {
     private food:delicious;
     private foodButton() {
         if(	this.getChildIndex(this.food)>0 ) this.removeChild(this.food);
+        this.armatureDisplay.animation.play("goat_walk_anim", 10);
         this.food = new delicious(this.armatureDisplay);
         this.addChild(this.food);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.eat, this);

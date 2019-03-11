@@ -27,6 +27,13 @@ class delicious extends egret.DisplayObjectContainer {
     private follow(e) {
         this.food_1.x = e.stageX - this.food_1.width/2;
         this.food_1.y = e.stageY - this.food_1.height/2;
+        if(this.sheep.x > this.food_1.x){
+            this.sheep.scaleX = 0.5;
+            this.sheep.x = this.sheep.x - 0.5;
+        }else if(this.sheep.x < this.food_1.x) {
+            this.sheep.scaleX = -0.5;
+            this.sheep.x = this.sheep.x + 0.5;
+        }
         let neck_bone = this.sheep.armature.getBone("neck_bone");
         neck_bone.offset.rotation =(-(30/(this.position[1]+105)*e.stageY)+30)*Math.PI/180;
     }
@@ -49,6 +56,8 @@ class delicious extends egret.DisplayObjectContainer {
     }
 
     private end() {
+        this.sheep.scaleX = 0.5;
+        this.sheep.x = this.stage.stageWidth/2+30;
         this.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.goBack, this);
         this.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.follow, this);
         this.removeChildren();
