@@ -36,9 +36,9 @@ class Main extends egret.DisplayObjectContainer {
         this.once(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
-    private img:await;
+    private img:await_1;
     private onAddToStage() {
-        this.img = new await();
+        this.img = new await_1();
         this.addChild(this.img);
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");

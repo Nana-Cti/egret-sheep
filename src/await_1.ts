@@ -1,4 +1,4 @@
-class await extends egret.DisplayObjectContainer {
+class await_1 extends egret.DisplayObjectContainer {
     public constructor() {
         super();
         this.once(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
